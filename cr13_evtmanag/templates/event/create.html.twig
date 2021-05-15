@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+<div class="container mx-3">
+    
+    <h2 class="page-header mx-3">Add Event</h2>
+    
+    <div class="container ">
+        {{form_start(form)}}
+        <div class="row">
+            <div class="col-6">
+                {{ form_row(form.name) }}
+                {{ form_row(form.description) }}
+                {{ form_row(form.image) }}
+                {{ form_row(form.capacity) }}
+                {{ form_row(form.date) }}
+            </div>
+            <div class="col-6">
+                {{form_widget(form)}}
+            </div>
+        </div>
+    
+        {{form_end(form)}}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+   <div class="container-fluid ">
+   
+        <div class="row d-flex justify-content-center mt-5 py-5">
+          
+          <div class="col-4">
+            <div class="card-body">
+              <h5 class="card-title">{{event.name}}</h5>
+              <p class="card-text"> {{event.description}} </p>
+              <hr>
+              <p class="card-text">Website : 
+                  <a href="{{event.evtUrl}}" target="_blank">
+                    <small class="text">
+                       events.wien
+                    </small>
+                  </a>
+              </p>
+              <p class="card-text"><small class="text">Location : {{event.address}}</small></p>
+              <p class="card-text"><small class="text">Phone :{{event.phone}} </small></p>
+              <p class="card-text"><small class="text-muted"> Capacity : {{event.capacity}} </small></p>
+            </div>
+          </div>
+          <div class="col-4">
+            <img src=" {{event.image}} " alt="...">
+          </div>
+        </div>
+    
+   </div>
+
+{% endblock %}
