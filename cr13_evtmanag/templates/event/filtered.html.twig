@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}EventController!{% endblock %}
+
+
+{% block body %}
+<div class="container justify-content-center">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <h1 class="text-primary text-center mb-5 mt-5"> Events of type: {{type}}</h1>
+        </div>
+    </div>
+</div>
+    <div class="container-fluid">
+        <div class="row">
+            {% for event in events%}
+            <div class="col-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{event.image}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title"> {{event.name}} </h5>
+                        <p class="card-text">{{event.date| date('F j, Y, g: i a  ')}}</p>
+                        <a href="/details/{{event.id}}" class="btn btn-info">I n f o</a>
+                        <a href="/edit/{{event.id}}" class="btn btn-warning">E d i t</a>
+                        <a href="/delete/{{event.id}}" class="btn" style="color:blueviolet">Delete</a>
+                        </div>
+                    </div>  
+                </div>       
+                {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

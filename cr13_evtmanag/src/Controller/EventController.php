@@ -30,6 +30,18 @@ class EventController extends AbstractController
             'events' => $events
         ]);
     }
+    // ==================== filtered view (BONUS QUESTION)=====================
+
+    #[Route('/filtered/{type}', name: 'filtered_event')]
+    public function filteredView($type): Response
+    {
+        $events=$this->getDoctrine()->getRepository('App:Event')->findBy(['type' => $type]);
+        
+        // dd($events);
+        return $this->render('event/filtered.html.twig', [
+            'events' => $events, 'type' => $type
+        ]);
+    }
 
     // ===================== create =====================================
     #[Route('/create', name: 'create_event')]
