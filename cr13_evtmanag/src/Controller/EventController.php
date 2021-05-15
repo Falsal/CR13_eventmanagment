@@ -153,7 +153,7 @@ class EventController extends AbstractController
         ->add('evt_url', TextType::class,array("attr"=> array("class"=>"form-control","style"=>"margin-bottom=15px")))
 
      
-        ->add('type', ChoiceType::class, array('choices'=>array('Music'=>'Music','Sport'=>'Sport', 'Museum'=>'Museum'),'attr' => array('class'=> 'form-control', 'style'=>'margin-botton:30px')))
+        ->add('type', ChoiceType::class, array('choices'=>array('Music'=>'Music','Family'=>'Family', 'Museum'=>'Museum'),'attr' => array('class'=> 'form-control', 'style'=>'margin-botton:30px')))
 
         ->add('save', SubmitType::class, array('label'=> 'Update', 'attr' => array('class'=> 'btn-success', 'style'=>'margin-top:15px')))
         ->add('edit', SubmitType::class, array('label'=> 'Back', 'attr' => array('class'=> 'btn-dark', 'style'=>'margin-top:15px', 'href'=>'/')))
